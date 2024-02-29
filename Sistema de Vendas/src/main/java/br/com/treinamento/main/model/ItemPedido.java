@@ -9,7 +9,7 @@ public class ItemPedido {
 	
 	//Atributos
 	@Getter @Setter
-	private Produtos produto;
+	private Produto produto;
 	@Getter @Setter
 	private Integer quantidade;
 	@Getter 
@@ -18,7 +18,7 @@ public class ItemPedido {
 	private BigDecimal valorTotal;;
 	
 	//Construtor
-	public ItemPedido(Produtos produto, Integer quantidade) {
+	public ItemPedido(Produto produto, Integer quantidade) {
 		this.produto = produto;
 		this.quantidade = quantidade;
 		this.valorUnitario = produto.getPreco();

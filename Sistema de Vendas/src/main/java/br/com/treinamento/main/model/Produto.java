@@ -5,24 +5,24 @@ import java.math.BigDecimal;
 import lombok.Getter;
 import lombok.Setter;
 
-public class Produtos {
+public class Produto {
 	
 	//Atributos
 	@Getter @Setter
-	private Integer codigo;
+	private Integer id;
 	@Getter @Setter
 	private String nome;
 	@Getter @Setter
 	private BigDecimal preco;
 
 	//Construtor
-	public Produtos(Integer codigo, String nome, BigDecimal preco) {
-		this.codigo = codigo;
+	public Produto(String nome, BigDecimal preco) {
 		this.nome = nome;
 		this.preco = preco;
 	}
-	
-	
-	
 
+	public Produto() {
+
+	}
+	
 }
