@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import br.com.treinamento.main.connectionfactory.ConnectionFactory;
 import br.com.treinamento.main.model.Produto;
 

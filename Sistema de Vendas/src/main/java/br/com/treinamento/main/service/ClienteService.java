@@ -5,5 +5,24 @@ import br.com.treinamento.main.model.Cliente;
 
 public class ClienteService {
 
+    public void cadastrarCliente(){
+
+    }
+
+    public void listarClientes(){
+        
+    }
+
+    public void visualizarCliente(){
+
+    }
+
+    public void excluirCliente(){
+
+    }
+
+    public void alterarCliente(){
+
+    }
 
 }

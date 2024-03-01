@@ -19,6 +19,10 @@ public class Cliente {
 		this.nome = nome;
 		this.email = email;
 	}
+
+	public Cliente(){
+		
+	}
 	
 	
 
