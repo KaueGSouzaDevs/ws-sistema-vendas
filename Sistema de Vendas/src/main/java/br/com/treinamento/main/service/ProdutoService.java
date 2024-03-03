@@ -13,10 +13,10 @@ public class ProdutoService {
 
 	/*Cadastrar produto no banco de dados na tabela (tb_produto).*/
 	public void cadastrarProduto() {
-		System.out.printf("\n&15-s\n", "Cadastrar produto.");
+		System.out.printf("\n%-15s\n", "Cadastrar produto.");
 		System.out.print("Informe nome do produto: ");
 		String nome = Main.scanner.nextLine();
-		System.out.print("-----------------------------\nInforme o preço: R$");
+		System.out.printf("%-15s\n%s","---------------","Informe o preço: R$");
 		String precoVar = Main.scanner.nextLine().replace(",", ".");
 		BigDecimal preco = new BigDecimal(precoVar);
 		Produto produto = new Produto(nome, preco);
@@ -43,7 +43,7 @@ public class ProdutoService {
 	public void listarProdutos() throws SQLException{
 		ProdutoDao produtoDao = new ProdutoDao();
 		List<Produto> produtos = produtoDao.listarProdutos();
-		System.out.printf("\n%-10s %-151s\n", " ", "Listagem de Profutos");
+		System.out.printf("\n%-10s %-15s\n", " ", "Listagem de Produtos");
 		System.out.printf("%-15s %-20s %-10s", " ", "Id", "Nome", "Preço");
 		for(Produto produto: produtos){
 			System.out.printf("\n%-15s %-20s %-10s", produto.getId() , produto.getNome() , produto.getPreco());
@@ -52,15 +52,14 @@ public class ProdutoService {
 		Main.scanner.nextLine();
 	}
 
-
 	/*Visualizar produtos do banco de dados */
 	public void buscarProduto() throws SQLException{
 		ProdutoDao produtoDao = new ProdutoDao();
 		System.out.printf("\n%-10s %-15s %-10s", " ", "Detalhar produtos", " ");
-		System.out.print("Informe o ID do produto: ");
+		System.out.print("\nInforme o ID do produto: ");
 		Integer codigo = Main.scanner.nextInt();
 		Main.scanner.nextLine();		
-			Optional<Produto> protudoOptional = produtoDao.buscarPorId(codigo);
+			Optional<Produto> protudoOptional = produtoDao.buscarProdutoPorId(codigo);
 			if(protudoOptional.isEmpty()){
 				System.out.println("\nProduto não encontrado");
 			}else{
@@ -80,7 +79,7 @@ public class ProdutoService {
 		Integer codigo = Main.scanner.nextInt();
 		System.out.println("-------------------------------------------");
 		Main.scanner.nextLine();
-		Optional<Produto> produtoOptional = produtoDao.buscarPorId(codigo);
+		Optional<Produto> produtoOptional = produtoDao.buscarProdutoPorId(codigo);
 		if (produtoOptional.isEmpty()) {
 			System.out.println("\nProduto não encontrado.");
 		}else{
@@ -109,7 +108,7 @@ public class ProdutoService {
 		Integer codigo = Main.scanner.nextInt();
 		System.out.println("-------------------------------------------\n");
 		Main.scanner.nextLine();
-		Optional<Produto> produtoOptional = produtoDao.buscarPorId(codigo);
+		Optional<Produto> produtoOptional = produtoDao.buscarProdutoPorId(codigo);
 		if (produtoOptional.isEmpty()) {
 			System.out.println("Produto não encontrado.");
 		}else{

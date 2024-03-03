@@ -11,12 +11,16 @@ public class SistemaService {
 		System.out.println("\n1 - Cadastrar cliente.");
 		System.out.println("2 - Listar clientes.");		
 		System.out.println("3 - Buscar clientes.");		
-		System.out.println("4 - Cadastrar produto");		
-		System.out.println("5 - Listar produtos.");		
-		System.out.println("5 - Buscar produtos.");		
-		System.out.println("7 - Criar pedido.");		
-		System.out.println("8 - Listar pedidos.");		
-		System.out.println("9 - Buscar pedidos.");		
+		System.out.println("4 - Atualizar clientes.");		
+		System.out.println("5 - Excluir clientes.");		
+		System.out.println("6 - Cadastrar produto");		
+		System.out.println("7 - Listar produtos.");		
+		System.out.println("8 - Buscar produtos.");
+		System.out.println("9 - Atualizar produtos.");
+		System.out.println("10 - Excluir produtos.");
+		System.out.println(" - Criar pedido.");		
+		System.out.println(" - Listar pedidos.");		
+		System.out.println(" - Buscar pedidos.");		
 		System.out.println("0 - Sair do sistema.\n");
 		
 	}

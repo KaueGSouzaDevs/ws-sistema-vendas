@@ -7,15 +7,14 @@ public class Cliente {
 	
 	//Atributos
 	@Getter @Setter
-	private Integer codigo;
+	private Integer id;
 	@Getter @Setter
 	private String nome;
 	@Getter @Setter
 	private String email;
 	
 	//Construtor
-	public Cliente(Integer codigo, String nome, String email) {
-		this.codigo = codigo;
+	public Cliente(String nome, String email) {
 		this.nome = nome;
 		this.email = email;
 	}
