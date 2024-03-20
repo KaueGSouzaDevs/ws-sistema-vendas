@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import br.com.treinamento.main.service.ClienteService;
+import br.com.treinamento.main.service.PedidoService;
 import br.com.treinamento.main.service.ProdutoService;
 import br.com.treinamento.main.service.SistemaService;
 
@@ -14,6 +15,7 @@ public class Main {
 
 		ProdutoService produtoService = new ProdutoService();
 		ClienteService clienteService = new ClienteService();
+		PedidoService pedidoService = new PedidoService();
 		while (true) {
 
 			SistemaService.montarMenu();
@@ -62,10 +64,10 @@ public class Main {
 					produtoService.excluirProduto();
 					break;
 				}
-				// case 10: {
-				// 	// PedidoService.cadastroPedido();
-				// 	break;
-				// }
+				case 11: {
+					pedidoService.cadastrarPedido();
+					break;
+				}
 				// case 10: {
 				// 	// PedidoService.listarPedidos();
 				// 	break;

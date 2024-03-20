@@ -18,9 +18,9 @@ public class SistemaService {
 		System.out.println("8 - Buscar produtos.");
 		System.out.println("9 - Atualizar produtos.");
 		System.out.println("10 - Excluir produtos.");
-		System.out.println(" - Criar pedido.");		
-		System.out.println(" - Listar pedidos.");		
-		System.out.println(" - Buscar pedidos.");		
+		System.out.println("11 - Criar pedido.");		
+		System.out.println("12 - Listar pedidos.");		
+		System.out.println("13 - Buscar pedidos.");		
 		System.out.println("0 - Sair do sistema.\n");
 		
 	}

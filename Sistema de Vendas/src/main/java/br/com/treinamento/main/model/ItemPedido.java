@@ -11,6 +11,8 @@ public class ItemPedido {
 	@Getter @Setter
 	private Produto produto;
 	@Getter @Setter
+	private Integer idCliente;
+	@Getter @Setter
 	private Integer quantidade;
 	@Getter 
 	private BigDecimal valorUnitario;
@@ -18,8 +20,9 @@ public class ItemPedido {
 	private BigDecimal valorTotal;;
 	
 	//Construtor
-	public ItemPedido(Produto produto, Integer quantidade) {
+	public ItemPedido(Produto produto, Integer idCliente, Integer quantidade) {
 		this.produto = produto;
+		this.idCliente = idCliente;
 		this.quantidade = quantidade;
 		this.valorUnitario = produto.getPreco();
 		this.valorTotal = valorUnitario.multiply(new BigDecimal(quantidade));
