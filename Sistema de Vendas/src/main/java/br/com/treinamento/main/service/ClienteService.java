@@ -124,4 +124,8 @@ public class ClienteService {
         Main.scanner.nextLine();
     }
 
+    public Optional<Cliente> buscaPorId(Integer codigo) throws SQLException {
+		ClienteDao clienteDao = new ClienteDao();
+		return clienteDao.buscarClientePorId(codigo);
+	}
 }

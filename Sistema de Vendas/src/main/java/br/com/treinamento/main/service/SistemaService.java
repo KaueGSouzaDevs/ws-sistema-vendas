@@ -1,5 +1,7 @@
 package br.com.treinamento.main.service;
 
+import java.io.IOException;
+
 import br.com.treinamento.main.Main;
 
 public class SistemaService {
@@ -7,8 +9,8 @@ public class SistemaService {
 	public static void montarMenu() {
 		System.out.println("\n=========================");
 		System.out.println("===Sistema de Compreas===");
-		System.out.println("=========================");
-		System.out.println("\n1 - Cadastrar cliente.");
+		System.out.println("=========================\n");
+		System.out.println("1 - Cadastrar cliente.");
 		System.out.println("2 - Listar clientes.");		
 		System.out.println("3 - Buscar clientes.");		
 		System.out.println("4 - Atualizar clientes.");		
@@ -44,4 +46,15 @@ public class SistemaService {
 		return codigo;
 	}
 
+	public static void limparTela() {
+	// 	System.out.println("\n");
+		
+	// 	// Windows
+	// 	try {
+	// 		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+	// 	} catch (IOException | InterruptedException e) {
+	// 		e.printStackTrace();
+	// 	}
+	}
+	
 }

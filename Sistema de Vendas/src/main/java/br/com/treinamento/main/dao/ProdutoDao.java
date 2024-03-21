@@ -18,7 +18,7 @@ public class ProdutoDao {
 		ConnectionFactory factory = new ConnectionFactory();
 		Connection connection = factory.abrirConexao();
 		
-		String sqlInsere = "INSERT INTO tb_produto(nome, preco) values (?,?)";
+		String sqlInsere = "INSERT INTO tb_produto(nome_produto, preco_produto) values (?,?)";
 		
 		//PreparedStatement para evitar o SQL Injection
 		PreparedStatement pstm = connection.prepareStatement(sqlInsere);
@@ -36,15 +36,15 @@ public class ProdutoDao {
 		List<Produto> produtoList = new ArrayList<Produto>();
 		ConnectionFactory factory = new ConnectionFactory();
 		Connection connection = factory.abrirConexao();
-		String sqlList = "SELECT id_produto, nome, preco FROM tb_produto";
+		String sqlList = "SELECT id_produto, nome_produto, preco_produto FROM tb_produto ORDER BY id_produto";
 		PreparedStatement pstm = connection.prepareStatement(sqlList);
 		pstm.execute();
 		ResultSet rst = pstm.getResultSet();
 		while(rst.next()){
 			Produto produto = new Produto();
 			produto.setId(rst.getInt("id_produto"));
-			produto.setNome(rst.getString("nome"));
-			produto.setPreco(rst.getBigDecimal("preco"));
+			produto.setNome(rst.getString("nome_produto"));
+			produto.setPreco(rst.getBigDecimal("preco_produto"));
 			produtoList.add(produto);
 		}
 		rst.close();
@@ -57,7 +57,7 @@ public class ProdutoDao {
 	public Optional<Produto> buscarProdutoPorId(Integer id) throws SQLException{
 		ConnectionFactory factory = new ConnectionFactory();
 		Connection connection = factory.abrirConexao();
-		String sqlBusca = "SELECT id_produto, nome, preco FROM tb_produto WHERE id_produto = ?";
+		String sqlBusca = "SELECT id_produto, nome_produto, preco_produto FROM tb_produto WHERE id_produto = ?";
 		PreparedStatement pstm = connection.prepareStatement(sqlBusca);
 		pstm.setInt(1, id);
 		pstm.execute();
@@ -66,8 +66,8 @@ public class ProdutoDao {
 		if(rst.next()){
 			Produto produto = new Produto();
 			produto.setId(rst.getInt("id_produto"));
-			produto.setNome(rst.getString("nome"));
-			produto.setPreco(rst.getBigDecimal("preco"));
+			produto.setNome(rst.getString("nome_produto"));
+			produto.setPreco(rst.getBigDecimal("preco_produto"));
 			produtoOptional = Optional.of(produto);
 		}
 		rst.close();
@@ -92,7 +92,7 @@ public class ProdutoDao {
 	public void atualizarProduto(Produto produto) throws SQLException{
 		ConnectionFactory factory = new ConnectionFactory();
 		Connection connection = factory.abrirConexao();
-		String sqlUpdate = "UPDATE tb_produto set nome =? , preco = ? WHERE id_produto = ?";
+		String sqlUpdate = "UPDATE tb_produto set nome_produto =? , preco_produto = ? WHERE id_produto = ?";
 		PreparedStatement pstm = connection.prepareStatement(sqlUpdate);
 		pstm.setString(1, produto.getNome());
 		pstm.setBigDecimal(2,produto.getPreco());

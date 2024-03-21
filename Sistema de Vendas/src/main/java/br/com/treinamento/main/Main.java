@@ -65,15 +65,15 @@ public class Main {
 					break;
 				}
 				case 11: {
-					pedidoService.cadastrarPedido();
+					pedidoService.gerarPedido();
 					break;
 				}
 				// case 10: {
-				// 	// PedidoService.listarPedidos();
+				//// PedidoService.listarPedidos();
 				// 	break;
 				// }
 				// case 11: {
-				// 	// PedidoService.buscarPedidos();
+				// // PedidoService.buscarPedidos();
 				// 	break;
 				// }
 				case 0: {

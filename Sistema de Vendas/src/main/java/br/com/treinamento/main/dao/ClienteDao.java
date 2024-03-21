@@ -30,7 +30,7 @@ public class ClienteDao {
         List<Cliente> clienteList = new ArrayList<Cliente>();
         ConnectionFactory factory = new ConnectionFactory();
         Connection connection = factory.abrirConexao();
-        String sqlList = "SELECT id_cliente, nome_cliente, email_cliente FROM tb_cliente";
+        String sqlList = "SELECT id_cliente, nome_cliente, email_cliente FROM tb_cliente ORDER BY id_cliente";
         PreparedStatement pstm = connection.prepareStatement(sqlList);
         pstm.execute();
         ResultSet rst = pstm.getResultSet();
