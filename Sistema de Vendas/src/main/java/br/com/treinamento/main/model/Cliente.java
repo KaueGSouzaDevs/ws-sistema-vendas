@@ -2,7 +2,8 @@ package br.com.treinamento.main.model;
 
 import lombok.Getter;
 import lombok.Setter;
-
+import lombok.ToString;
+@ToString
 public class Cliente {
 	
 	//Atributos

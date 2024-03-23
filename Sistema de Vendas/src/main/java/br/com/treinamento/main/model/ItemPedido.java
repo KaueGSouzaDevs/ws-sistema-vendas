@@ -7,27 +7,26 @@ import lombok.Setter;
 
 public class ItemPedido {
 	
-	//Atributos
+	@Getter @Setter
+	private Long id;
+	@Getter @Setter
+	private Pedido pedido;
 	@Getter @Setter
 	private Produto produto;
 	@Getter @Setter
-	private Integer idCliente;
-	@Getter @Setter
 	private Integer quantidade;
-	@Getter 
+	@Getter @Setter
 	private BigDecimal valorUnitario;
-	@Getter
-	private BigDecimal valorTotal;;
-	
-	//Construtor
-	public ItemPedido(Produto produto, Integer idCliente, Integer quantidade) {
+	@Getter @Setter
+	private BigDecimal valorTotal;
+
+
+	public ItemPedido(Pedido pedido, Produto produto, Integer quantidade) {
+		this.pedido = pedido;
 		this.produto = produto;
-		this.idCliente = idCliente;
 		this.quantidade = quantidade;
 		this.valorUnitario = produto.getPreco();
-		this.valorTotal = valorUnitario.multiply(new BigDecimal(quantidade));
+		this.valorTotal = new BigDecimal(quantidade).multiply(valorUnitario);
 	}
-	
-	
-	
+
 }

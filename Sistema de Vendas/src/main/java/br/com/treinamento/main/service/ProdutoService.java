@@ -126,4 +126,18 @@ public class ProdutoService {
 		System.out.println("\nPressione enter para continuar.");
 		Main.scanner.nextLine();
 	}
+
+	public Optional<Produto> buscaPorId(Integer codigo) {
+		
+		ProdutoDao produtoDao = new ProdutoDao();
+
+		try {
+			return produtoDao.buscarProdutoPorId(codigo);
+		} catch (SQLException e) {
+			System.out.println("Erro ao buscar o produto: " + e.getMessage());
+			return Optional.empty();
+		}
+		
+	}
+
 }
